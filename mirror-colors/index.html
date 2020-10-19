@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Mirror Color</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mirror <span>Color</span></h1>
+        </header>
+    
+        <div class="main">
+            <div class="typed">
+                <label for="typed-color">Digite uma cor<br/>(em hexadecimal):</label>
+                <input id="typed-color" type="text" placeholder="#FFFFFF" value="#FFFFFF" autocomplete="off" minlength="4" maxlength="7">
+            </div>
+    
+            <div class="generated">
+                <label for="generated-color">Cor gerada<br/>(em hexadecimal):</label>
+                <input id="generated-color" type="text" placeholder="#000000" value="#000000" disabled>
+            </div>
+        </div>
+        
+        <div class="button-fake-border">
+            <button>Gerar</button>
+        </div>
+    </div>
+</body>
+</html>
