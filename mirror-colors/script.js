@@ -29,12 +29,17 @@ let changeColor = () => {
 
         window.document.documentElement.style.setProperty('--color-typed', typed_color);
         window.document.documentElement.style.setProperty('--color-generated', generated_color);
+        input_typed_color.focus();
     } else {
         alert('Esta cor não é válida!');
     }
 }
 
 let checkChar = (event) => {
+    if (event.keyCode == 13) {
+        changeColor();
+    }
+
     if (event.target.value.length < old_color.length && event.target.value.length < 1 || event.target.value.length > old_color.length && event.target.value.length > 7) {
         input_typed_color.value = old_color;
         event.preventDefault();
@@ -59,5 +64,11 @@ let checkChar = (event) => {
     }
 }
 
+let test = () => {
+    console.log('Arroy');
+    input_typed_color.focus();
+}
+
 input_typed_color.addEventListener('keyup', checkChar);
+window.document.querySelector('body').onload = test;
 button_generate.addEventListener('click', changeColor);
