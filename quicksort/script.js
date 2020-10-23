@@ -1,4 +1,4 @@
-let exemple = [20,8,2,11,13,3,7,18,14,4,16,10,15,1,9,17,19,12,5,6];
+let exemple = [20, 8, 2, 11, 13, 3, 7, 18, 14, 4, 16, 10, 15, 1, 9, 17, 19, 12, 5, 6];
 
 let findAndDeletePivo = (arr) => {
     let pivo = arr.shift();
