@@ -1,35 +1,53 @@
 let exemple = [20, 8, 2, 11, 13, 3, 7, 18, 14, 4, 16, 10, 15, 1, 9, 17, 19, 12, 5, 6];
 
 /*
-    Essa implementação é apenas um teste. 
-    Ela não está otimizada pois:
-        * não escolhe o pivô ideal;
-        * não foi pensado nas possíveis diferenças de otimização do uso do `.concat` e `.push`.
+    Implementação baseada no que aprendi nas disciplinas de Programação Funcional e Algoritmos e Estruturas de Dados 1 e 2.
 */
 
-let findAndDeletePivo = (arr) => {
-    let pivo = arr.shift();
-    return pivo;
+let findAndPositionPivo = (arr, start, end) => {
+    let pivo, esq, dir, aux;
+
+    esq = start;
+    dir = end;
+    pivo = arr[start];
+
+    while(esq < dir) {
+        while(esq <= end && arr[esq] <= pivo) {
+            esq++;
+        }
+
+        while(dir >= 0 && arr[dir] >= pivo) {
+            dir--;
+        }
+
+        if(esq < dir) {
+            aux = arr[esq];
+            arr[esq] = arr[dir];
+            arr[dir] = aux;
+        }
+    }
+
+    arr[start] = arr[dir];
+    arr[dir] = pivo;
+
+    return dir;
+}
+
+let quicksortAux = (arr, start, end) => {
+    if(end > start){
+        let pivoPosition = findAndPositionPivo(arr, start, end);
+    
+        quicksortAux(arr, start, pivoPosition - 1);
+        quicksortAux(arr, pivoPosition + 1, end);
+
+    }
+    
+    return arr;
+
 }
 
 let quicksort = (arr) => {
-    if (arr.length == 1 || arr.length == 0) {
-        return arr;
-    } else {
-        let pivo = findAndDeletePivo(arr);
-        let smaller = [];
-        let bigger = [];
-
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] < pivo) {
-                smaller.push(arr[i]);
-            } else {
-                bigger.push(arr[i]);
-            }
-        }
-
-        return quicksort(smaller).concat(pivo, quicksort(bigger));
-    }
+    return quicksortAux(arr, 0, arr.length - 1)
 }
 
 console.log(quicksort(exemple));
