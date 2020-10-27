@@ -4,7 +4,7 @@ let exemple = [20, 8, 2, 11, 13, 3, 7, 18, 14, 4, 16, 10, 15, 1, 9, 17, 19, 12, 
     Implementação baseada no que aprendi nas disciplinas de Programação Funcional e Algoritmos e Estruturas de Dados 1 e 2.
 */
 
-// Versão "Linear"
+// Versão sem recursão
 
 let bubblesortAuxL = (arr, n) => {
     let aux, proceed, end = n;
@@ -31,7 +31,7 @@ let bubblesortL = (arr) => {
     return bubblesortAuxL(arr, arr.length);
 }
 
-// Versão "Funcional"
+// Versão com recursão
 
 let bubblesortAuxF = (arr, n) => {
     if(n == 0) {

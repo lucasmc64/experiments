@@ -39,11 +39,9 @@ let quicksortAux = (arr, start, end) => {
     
         quicksortAux(arr, start, pivoPosition - 1);
         quicksortAux(arr, pivoPosition + 1, end);
-
     }
     
     return arr;
-
 }
 
 let quicksort = (arr) => {
