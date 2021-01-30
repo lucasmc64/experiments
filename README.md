@@ -1,3 +1,5 @@
-# Experiments
+![Mirror Color](readme-images/mirror-color.png)
 
-Esse será um repositório dedicado a... isso mesmo, experimentos! De nada adianta estudar muito e não praticar de vez em quando? Aqui vai ter um monte de coisa aleatória. *That's it!*
+# Experiments :alembic:
+
+This will be a repository dedicated to... that's right, experiments! There is no point in studying hard and not practicing from time to time, is it? Here is going to be a lot of random stuff. *That's it!*
