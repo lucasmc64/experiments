@@ -1,4 +1,4 @@
-![Mirror Color](readme-images/mirror-color.png)
+![Mirror Color](readme-images/cover.svg)
 
 # Experiments :alembic:
 
