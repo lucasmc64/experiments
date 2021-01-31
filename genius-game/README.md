@@ -1,12 +1,12 @@
-![Voting](readme-images/voting.png)
+![Genius Game](readme-images/genius-game.png)
 
-# Voting :raising_hand:
+# Genius Game :joystick:
 
 > :brazil: Caso prefira ler em outra língua, esse README foi escrito também em português. Clique [AQUI](/README_pt-br.md) para acessar.
 
 ## Some details :scroll:
 
-* The back end is made with Java.
+* The front end is made with HTML5, CSS3 and JavaScript.
 
 ## How to run the project on my machine? :thinking:
 
@@ -14,12 +14,7 @@ The first step is to clone the project, either via terminal or GitHub Desktop, o
 
 ### Requirements :hammer_and_wrench:
 
-* [JDK8](https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html) installed.
-* [Netbeans](https://netbeans.org/) installed.
-
-### Running the project :sparkles:
-
-Open the project folder in Netbeans and click the *Build and run* button. The files will be compiled and the program will open.
+There are no requirements to run the project on your computer! Just double click on the *index.html* file and it will open in your default browser.
 
 ## If everything went well... :tada:
 

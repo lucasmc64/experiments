@@ -1,19 +1,23 @@
-![Cover](readme-images/cover.png)
+![Dino Game](readme-images/cover.png)
 
-# Landing Page do Instagram
+# Instagram Landing Page :iphone:
 
-*Esse foi um projeto desenvolvido em um módulo do bootcamp de [HTML Developer](https://web.digitalinnovation.one/track/html-web-developer) da Digital Innovation One (DIO).*
+> :brazil: Caso prefira ler em outra língua, esse README foi escrito também em português. Clique [AQUI](/README_pt-br.md) para acessar.
 
-## Objetivo
+*This was a project developed in a module of the [HTML Developer](https://web.digitalinnovation.one/track/html-web-developer) bootcamp from Digital Innovation One (DIO).*
 
-Praticar os conhecimentos em HTML, CSS e JavaScript.
+## Some details :scroll:
 
-## Alguns detalhes
+* The front end is made with HTML5, CSS3 and JavaScript.
 
-Essa página é construisa com somente HTML, CSS e JavaScript.
+## How to run the project on my machine? :thinking:
 
-## Como rodar o projeto na minha máquina
+The first step is to clone the project, either via terminal or GitHub Desktop, or even by downloading the compressed file (.zip). After that, go ahead.
 
-O primeiro passo é clonar o projeto, seja via terminal ou GitHub Desktop, ou mesmo baixando o arquivo compactado (.zip). 
+### Requirements :hammer_and_wrench:
 
-Após isso, basta abrir o arquivo *index.html* no navegador de sua preferência.
+There are no requirements to run the project on your computer! Just double click on the *index.html* file and it will open in your default browser.
+
+## If everything went well... :tada:
+
+Now you are running the project beautifully!
