@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+
+    <!-- 
+        Ícones usados: Material Icons
+    -->
+
+    <title>Controle de Locais de Trabalho</title>
+</head>
+
+<body>
+    <div class="header-bg">
+        <header class="container">
+            <h1>Controle de Locais de Tabalho</h1>
+            <nav>
+                <ul>
+                    <li class="hide menu">
+                        <button>
+                            <span class="material-icons-outlined">
+                                menu
+                            </span>
+                        </button>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <span class="material-icons-outlined">
+                                home
+                            </span>
+                        </a>
+                    </li>
+
+                    <li id="user">
+                        <a href="#">
+                            <span class="material-icons-outlined">
+                                person_outline
+                            </span>
+
+                            <div>
+                                <span>lucasmc64</span>
+                                <span>Administrador</span>
+                            </div>
+                        </a>
+
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Editar meus dados
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="main">
+        <aside>
+            <h2>
+                <span class="material-icons-outlined">
+                    settings
+                </span>
+                Administração
+            </h2>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">
+                            Administradores
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Áreas
+                        </a>
+                    </li>
+
+                    <li class="active">
+                        <a href="#">
+                            Locais de Trabalho
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Habilidades
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Log
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Responsáveis
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section>
+            <h2>
+                Locais de Trabalho
+            </h2>
+
+            <div class="card">
+                <form>
+                    <fieldset>
+                        <label for="building">Prédio</label>
+                        <select name="building" id="building" required>
+                            <option selected="true" disabled="disabled" value="default"></option>
+                            <option value="Prédio 1">Prédio 1</option>
+                            <option value="Prédio 2">Prédio 2</option>
+                            <option value="Prédio 3">Prédio 3</option>
+                            <option value="Prédio 4">Prédio 4</option>
+                            <option value="Prédio 5">Prédio 5</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="wokplace">Local de Trabalho</label>
+                        <input type="text" name="wokplace" id="wokplace" required>
+                    </fieldset>
+
+                    <button type="submit"></button>
+                </form>
+
+                <table>
+                    <colgroup>
+                        <col span="1" style="width: 40%;">
+                        <col span="1" style="width: 42%;">
+                        <col span="1" style="width: 18%;">
+                    </colgroup>
+
+                    <thead>
+                        <tr>
+                            <th>
+                                Prédio
+                            </th>
+
+                            <th>
+                                Local de Trabalho
+                            </th>
+
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                Prédio 1
+                            </td>
+
+                            <td>
+                                Local de Trabalho 1
+                            </td>
+
+                            <td>
+                                <button id="edit-1">
+                                    <span class="material-icons-outlined">
+                                        edit
+                                    </span>
+                                </button>
+
+                                <button id="delete">
+                                    <span class="material-icons-outlined">
+                                        delete
+                                    </span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
