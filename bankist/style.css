@@ -130,6 +130,8 @@ nav {
   background-color: #fff;
   border-radius: 1rem;
   overflow-y: scroll;
+  scrollbar-color: #888 transparent;
+  scrollbar-width: auto;
 }
 
 .movements__row {
