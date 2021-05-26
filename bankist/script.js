@@ -17,10 +17,10 @@ const account1 = {
     '2019-12-23T07:42:02.383Z',
     '2020-01-28T09:15:04.904Z',
     '2020-04-01T10:17:24.185Z',
-    '2020-05-08T14:11:59.604Z',
-    '2020-05-27T17:01:17.194Z',
-    '2020-07-11T23:36:17.929Z',
-    '2020-07-12T10:51:36.790Z',
+    '2021-05-20T10:11:59.604Z',
+    '2021-05-23T10:01:17.194Z',
+    '2021-05-24T10:36:17.929Z',
+    '2021-05-25T10:51:36.790Z',
   ],
   currency: 'EUR',
   locale: 'pt-PT', // de-DE
@@ -75,20 +75,32 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+const formatMovementDate = function (date) {
+  const calcDaysPassed = (date1, date2) =>
+    Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+  const daysPassed = calcDaysPassed(date, new Date());
 
-/////////////////////////////////////////////////
+  if (daysPassed === 0) return 'Today';
+  else if (daysPassed === 1) return 'Yesterday';
+  else if (daysPassed <= 7) return `${daysPassed} days ago`;
+  else {
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
 
-const displayMovements = function (movements, sort = false) {
+    return `${String(day).padStart(2, 0)}/${String(month).padStart(
+      2,
+      0
+    )}/${year}`;
+  }
+};
+
+const displayMovements = function (
+  { movements, movementsDates },
+  sort = false
+) {
   containerMovements.innerHTML = '';
 
   const sortedMovements = sort
@@ -97,11 +109,16 @@ const displayMovements = function (movements, sort = false) {
 
   sortedMovements.forEach(function (movement, index) {
     const type = movement > 0 ? 'deposit' : 'withdrawal';
+
+    const date = new Date(movementsDates[index]);
+    const displayDate = formatMovementDate(date);
+
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${
       index + 1
     } ${type}</div>
+        <div class="movements__date">${displayDate}</div>
         <div class="movements__value">${movement.toFixed(2)} €</div>
       </div>
     `;
@@ -152,7 +169,7 @@ createUsernames(accounts);
 
 const updateUI = function (account) {
   // Display movements
-  displayMovements(account.movements);
+  displayMovements(account);
 
   // Display balance
   calcDisplayBalance(account);
@@ -181,6 +198,20 @@ btnLogin.addEventListener('click', function (event) {
     )}`;
 
     containerApp.style.opacity = 1;
+
+    // Create current date and time
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.getMonth();
+    const year = now.getFullYear();
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+
+    labelDate.textContent = `${String(day).padStart(2, 0)}/${String(
+      month
+    ).padStart(2, 0)}/${year}, ${String(hour).padStart(2, 0)}:${String(
+      minute
+    ).padStart(2, 0)}`;
 
     // Clear input fields
     inputLoginUsername.value = '';
@@ -217,6 +248,10 @@ btnTransfer.addEventListener('click', function (event) {
     currentAccount.movements.push(-amount);
     receiverAccount.movements.push(amount);
 
+    // Add transfer date and time
+    currentAccount.movementsDates.push(new Date().toISOString());
+    receiverAccount.movementsDates.push(new Date().toISOString());
+
     // Update UI
     updateUI(currentAccount);
   }
@@ -233,6 +268,9 @@ btnLoan.addEventListener('click', function (event) {
   ) {
     // Add movement
     currentAccount.movements.push(amount);
+
+    // Add loan date and time
+    currentAccount.movementsDates.push(new Date().toISOString());
 
     // Update UI
     updateUI(currentAccount);
@@ -269,5 +307,5 @@ btnSort.addEventListener('click', function (event) {
   event.preventDefault();
 
   sorted = !sorted;
-  displayMovements(currentAccount.movements, sorted);
+  displayMovements(currentAccount, sorted);
 });
