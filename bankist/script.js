@@ -76,7 +76,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
 
-const formatMovementDate = function (date) {
+const formatMovementDate = function (date, locale) {
   const calcDaysPassed = (date1, date2) =>
     Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
 
@@ -86,19 +86,12 @@ const formatMovementDate = function (date) {
   else if (daysPassed === 1) return 'Yesterday';
   else if (daysPassed <= 7) return `${daysPassed} days ago`;
   else {
-    const day = date.getDate();
-    const month = date.getMonth();
-    const year = date.getFullYear();
-
-    return `${String(day).padStart(2, 0)}/${String(month).padStart(
-      2,
-      0
-    )}/${year}`;
+    return new Intl.DateTimeFormat(locale).format(date);
   }
 };
 
 const displayMovements = function (
-  { movements, movementsDates },
+  { movements, movementsDates, locale },
   sort = false
 ) {
   containerMovements.innerHTML = '';
@@ -111,7 +104,7 @@ const displayMovements = function (
     const type = movement > 0 ? 'deposit' : 'withdrawal';
 
     const date = new Date(movementsDates[index]);
-    const displayDate = formatMovementDate(date);
+    const displayDate = formatMovementDate(date, locale);
 
     const html = `
       <div class="movements__row">
@@ -201,17 +194,18 @@ btnLogin.addEventListener('click', function (event) {
 
     // Create current date and time
     const now = new Date();
-    const day = now.getDate();
-    const month = now.getMonth();
-    const year = now.getFullYear();
-    const hour = now.getHours();
-    const minute = now.getMinutes();
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric',
+    };
 
-    labelDate.textContent = `${String(day).padStart(2, 0)}/${String(
-      month
-    ).padStart(2, 0)}/${year}, ${String(hour).padStart(2, 0)}:${String(
-      minute
-    ).padStart(2, 0)}`;
+    labelDate.textContent = new Intl.DateTimeFormat(
+      currentAccount.locale,
+      options
+    ).format(now);
 
     // Clear input fields
     inputLoginUsername.value = '';
