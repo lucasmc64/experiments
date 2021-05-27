@@ -90,8 +90,15 @@ const formatMovementDate = function (date, locale) {
   }
 };
 
+const formatCurrency = function (value, locale, currency) {
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency,
+  }).format(value);
+};
+
 const displayMovements = function (
-  { movements, movementsDates, locale },
+  { movements, movementsDates, locale, currency },
   sort = false
 ) {
   containerMovements.innerHTML = '';
@@ -106,13 +113,15 @@ const displayMovements = function (
     const date = new Date(movementsDates[index]);
     const displayDate = formatMovementDate(date, locale);
 
+    const formattedMovement = formatCurrency(movement, locale, currency);
+
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${
       index + 1
     } ${type}</div>
         <div class="movements__date">${displayDate}</div>
-        <div class="movements__value">${movement.toFixed(2)} €</div>
+        <div class="movements__value">${formattedMovement}</div>
       </div>
     `;
 
@@ -126,26 +135,35 @@ const calcDisplayBalance = function (account) {
     0
   );
 
-  labelBalance.textContent = `${account.balance.toFixed(2)} €`;
+  labelBalance.textContent = formatCurrency(
+    account.balance,
+    account.locale,
+    account.currency
+  );
 };
 
-const calcDisplaySummary = function ({ movements, interestRate }) {
+const calcDisplaySummary = function ({
+  movements,
+  interestRate,
+  locale,
+  currency,
+}) {
   const incomes = movements
     .filter(movement => movement > 0)
     .reduce((accumulator, value) => accumulator + value, 0);
-  labelSumIn.textContent = `${incomes.toFixed(2)} €`;
+  labelSumIn.textContent = formatCurrency(incomes, locale, currency);
 
   const out = movements
     .filter(movement => movement < 0)
     .reduce((accumulator, value) => accumulator + value, 0);
-  labelSumOut.textContent = `${Math.abs(out).toFixed(2)} €`;
+  labelSumOut.textContent = formatCurrency(Math.abs(out), locale, currency);
 
   const interest = movements
     .filter(movement => movement > 0)
     .map(value => (value * interestRate) / 100)
     .filter(value => value >= 1)
     .reduce((accumulator, value) => accumulator + value);
-  labelSumInterest.textContent = `${interest.toFixed(2)} €`;
+  labelSumInterest.textContent = formatCurrency(interest, locale, currency);
 };
 
 const createUsernames = function (usersAccounts) {
@@ -171,9 +189,38 @@ const updateUI = function (account) {
   calcDisplaySummary(account);
 };
 
+const startLogoutTimer = function () {
+  const tick = function () {
+    const minutes = String(Math.trunc(time / 60)).padStart(2, 0);
+    const seconds = String(time % 60).padStart(2, 0);
+    // In each call, print the remaining time to UI
+    labelTimer.textContent = `${minutes}:${seconds}`;
+
+    // When 0 seconds, stop timer and log out user
+    if (time === 0) {
+      clearInterval(timer);
+
+      // Hide UI and message
+      labelWelcome.textContent = 'Log in to get started';
+      containerApp.style.opacity = 0;
+    }
+
+    // Decrease
+    time--;
+  };
+  // Set time to 5 minutes
+  let time = 300;
+
+  // Call the timer every second
+  tick();
+  const timer = setInterval(tick, 1000);
+
+  return timer;
+};
+
 // Event handlers
 
-let currentAccount;
+let currentAccount, timer;
 
 btnLogin.addEventListener('click', function (event) {
   // Prevent form from submitting
@@ -214,6 +261,9 @@ btnLogin.addEventListener('click', function (event) {
     inputLoginUsername.blur();
     inputLoginPin.blur();
 
+    if (timer) clearInterval(timer);
+    timer = startLogoutTimer();
+
     updateUI(currentAccount);
   }
 });
@@ -248,6 +298,10 @@ btnTransfer.addEventListener('click', function (event) {
 
     // Update UI
     updateUI(currentAccount);
+
+    // Reset timer
+    clearInterval(timer);
+    timer = startLogoutTimer();
   }
 });
 
@@ -260,14 +314,20 @@ btnLoan.addEventListener('click', function (event) {
     amount > 0 &&
     currentAccount.movements.some(movement => movement >= amount * 0.1)
   ) {
-    // Add movement
-    currentAccount.movements.push(amount);
+    setTimeout(function () {
+      // Add movement
+      currentAccount.movements.push(amount);
 
-    // Add loan date and time
-    currentAccount.movementsDates.push(new Date().toISOString());
+      // Add loan date and time
+      currentAccount.movementsDates.push(new Date().toISOString());
 
-    // Update UI
-    updateUI(currentAccount);
+      // Update UI
+      updateUI(currentAccount);
+
+      // Reset timer
+      clearInterval(timer);
+      timer = startLogoutTimer();
+    }, 2000);
   }
 
   inputLoanAmount.value = '';
