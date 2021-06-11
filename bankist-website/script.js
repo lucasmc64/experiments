@@ -7,6 +7,8 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
 
 const openModal = function (event) {
   event.preventDefault();
@@ -30,6 +32,31 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+// Button navigation
+
+btnScrollTo.addEventListener('click', function (event) {
+  // Scroll "suave" moderno
+  section1.scrollIntoView({
+    behavior: 'smooth',
+  });
+});
+
+// Page navigation
+
+document
+  .querySelector('.nav__links')
+  .addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (event.target.classList.contains('nav__link')) {
+      const id = event.target.getAttribute('href');
+
+      document.querySelector(id).scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  });
+
 /*
 // Mensagem de Cookies
 const header = document.querySelector('.header');
@@ -52,6 +79,7 @@ message.style.height =
   Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
 */
 
+/*
 // Scroll suave
 const btnScrollTo = document.querySelector('.btn--scroll-to');
 const section1 = document.querySelector('#section--1');
@@ -60,27 +88,28 @@ btnScrollTo.addEventListener('click', function (event) {
   // Pegar as coordenadas do elemento para onde queremos rolar
   const s1coords = section1.getBoundingClientRect();
 
-  /* // Scroll "seco" antigo
+  // Scroll "seco" antigo
   window.scrollTo(
     s1coords.left + window.pageXOffset, // Posição horizontal do elemento em relação a viewport + distância já rolada horizontalmente
     s1coords.top + window.pageYOffset // Posição vertical do elemento em relação a viewport + distância já rolada verticalmente
   );
-  */
+  
 
-  /* // Scroll "suave" antigo
+  // Scroll "suave" antigo
   window.scrollTo({
     left: s1coords.left + window.pageXOffset,
     top: s1coords.top + window.pageYOffset,
     behavior: 'smooth',
   });
-  */
+  
 
-  /* // Scroll "seco" moderno
+  // Scroll "seco" moderno
   section1.scrollIntoView();
-  */
+  
 
   // Scroll "suave" moderno
   section1.scrollIntoView({
     behavior: 'smooth',
   });
 });
+*/
