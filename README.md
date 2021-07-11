@@ -1,6 +1,6 @@
 ![Experiments](readme-images/cover.png)
 
-# Experiments :alembic:
+# :alembic: Experiments
 
 This will be a repository dedicated to... that's right, experiments! There is no point in studying hard and not practicing from time to time, is it? Here is going to be a lot of random stuff. *That's it!*
 
