@@ -1,6 +1,6 @@
-![Dino Game](readme-images/cover.png)
+![Guess My Number Game](readme-images/cover.png)
 
-# :t-rex: Dino Game
+# :video_game: Guess My Number Game
 
 ## :scroll: Some details
 
@@ -24,4 +24,4 @@ This project is under the MIT license. See the [LICENSE](LICENSE) for more infor
 
 ---
 
-Made with :green_heart: by Lucas Coutinho :wave: [Get in touch!](https://www.linkedin.com/in/lucasmc64/)
+Made with :purple_heart: by Lucas Coutinho :wave: [Get in touch!](https://www.linkedin.com/in/lucasmc64/)

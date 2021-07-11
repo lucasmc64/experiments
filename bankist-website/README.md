@@ -1,6 +1,6 @@
-![Dino Game](readme-images/cover.png)
+![Bankist Website](readme-images/cover.png)
 
-# :t-rex: Dino Game
+# :money_mouth_face: Bankist Website
 
 ## :scroll: Some details
 

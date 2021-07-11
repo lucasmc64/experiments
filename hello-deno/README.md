@@ -1,25 +1,31 @@
-![Dino Game](readme-images/hello-deno.png)
+![Dino Game](readme-images/cover.png)
 
-# Dino Game :sauropod:
+# :sauropod: Dino Game
 
-> :brazil: Caso prefira ler em outra língua, esse README foi escrito também em português. Clique [AQUI](/README_pt-br.md) para acessar.
+## :scroll: Some details
 
-## Some details :scroll:
+- The back end is made with Deno.
 
-* The back end is made with Deno.
-
-## How to run the project on my machine? :thinking:
+## thinking: How to run the project on my machine?
 
 The first step is to clone the project, either via terminal or GitHub Desktop, or even by downloading the compressed file (.zip). After that, go ahead.
 
-### Requirements :hammer_and_wrench:
+### :hammer_and_wrench: Requirements
 
-* [Deno](https://deno.land/) installed.
+- [Deno](https://deno.land/) installed.
 
-### Running the TS file :sparkles:
+### :sparkles: Running the TS file
 
 Open the project folder in the terminal and run the command `deno run --allow-net index.ts`. A link will be shown to access the return from the local server, open it in the browser of your choice.
 
-## If everything went well... :tada:
+## :tada: If everything went well...
 
 Now you are running the project beautifully!
+
+## :memo: License
+
+This project is under the MIT license. See the [LICENSE](LICENSE) for more information.
+
+---
+
+Made with :brown_heart: by Lucas Coutinho :wave: [Get in touch!](https://www.linkedin.com/in/lucasmc64/)

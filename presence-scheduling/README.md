@@ -2,8 +2,6 @@
 
 # :date: Presence Scheduling
 
-> :brazil: Caso prefira ler em outra língua, esse README foi escrito também em português. Clique [AQUI](/README_pt-br.md) para acessar.
-
 ## :dart: Goal
 
 In order to avoid agglomerations in the pandemic, this project aims to allow you to schedule your presence on a certain day at your workplace, blocking the days that already have many people scheduled.
@@ -23,3 +21,11 @@ There are no requirements to run the project on your computer! Just double click
 ## :tada: If everything went well...
 
 Now you are running the project beautifully!
+
+## :memo: License
+
+This project is under the MIT license. See the [LICENSE](LICENSE) for more information.
+
+---
+
+Made with :purple_heart: by Lucas Coutinho :wave: [Get in touch!](https://www.linkedin.com/in/lucasmc64/)

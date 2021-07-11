@@ -1,6 +1,6 @@
-![Dino Game](readme-images/cover.png)
+![Bankist](readme-images/cover.png)
 
-# :t-rex: Dino Game
+# :moneybag: Bankist
 
 ## :scroll: Some details
 
@@ -24,4 +24,4 @@ This project is under the MIT license. See the [LICENSE](LICENSE) for more infor
 
 ---
 
-Made with :green_heart: by Lucas Coutinho :wave: [Get in touch!](https://www.linkedin.com/in/lucasmc64/)
+Made with :purple_heart: by Lucas Coutinho :wave: [Get in touch!](https://www.linkedin.com/in/lucasmc64/)
