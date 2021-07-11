@@ -103,15 +103,8 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 // Sticky navigation
 
-const initialCoords = section1.getBoundingClientRect();
-
-window.addEventListener('scroll', function (event) {
-  if (this.window.scrollY > initialCoords.top) {
-    nav.classList.add('sticky');
-  } else {
-    nav.classList.remove('sticky');
-  }
-});
+const observer = new IntersectionObserver();
+observer.observe(section1);
 
 /*
 // Mensagem de Cookies

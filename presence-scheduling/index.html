@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Styles -->
+    <!-- Main -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Animations, Transition and Responsiveness -->
+    <link rel="preload" href="css/a-t-r.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/a-t-r.css"></noscript>
+    <!-- End Styles -->
+
+    <!-- Font - Poppins-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
+    </noscript>
+    <!-- End Font -->
+
+    <title>
+        Agendamento de Presença | Obuc
+    </title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <button class="button">
+                <img src="svg/menu.svg" alt="Ícone de menu">
+    
+                <span class="hide">
+                    Menu
+                </span>
+            </button>
+    
+            <div class="title">
+                <div class="obuc-calendar">
+                    <img src="svg/obuc.svg" alt="Logo da Obuc">
+
+                    <span id="icon-date"></span>
+                </div>
+    
+                <h1>
+                    Agendamento de Presença
+                </h1>
+            </div>
+    
+            <div class="calendar-menu">
+                <button id="today" class="today button">
+                    <img src="svg/today.svg" alt="Ícone de calendário">
+    
+                    <span class="hide">
+                        Volte para o mês/semana atual
+                    </span>
+                </button>
+    
+                <div class="change-mw">
+                    <button id="previous" class="button">
+                        <img src="svg/arrow-left.svg" alt="Ícone de seta para esquerda">
+    
+                        <span class="hide">
+                            Volta um mês/semana no calendário
+                        </span>
+                    </button>
+                    
+                    <span class="current-date"></span>
+                    
+                    <button id="next" class="button">
+                        <img src="svg/arrow-right.svg" alt="Ícone de seta para direita">
+    
+                        <span class="hide">
+                            Avança um mês/semana no calendário
+                        </span>
+                    </button>
+                </div>
+    
+                <button class="view button">
+                    <img src="svg/view.svg" alt="Ícone de olho">
+    
+                    <span class="hide">
+                        Alterna entre os modos mês e semana do calendário
+                    </span>
+                </button>
+            </div>
+    
+            <nav>
+                <ul>
+                    <li>
+                        <a class="button" href="#">
+                            <img src="svg/home.svg" alt="Ícone de casa">
+    
+                            <span class="hide">
+                                Voltar para a página principal
+                            </span>
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a class="user" href="#">
+                            <img src="img/lucas.jpg" alt="Lucas Coutinho">
+    
+                            <span class="hide">
+                                Abrir menu da conta do usuário
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container calendar">
+        <div class="table">
+            <div class="table-head"></div>
+            <div class="table-body"></div>
+        </div>
+
+        <div class="selected-day-container"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+/* =-=-=-=-=- Animations -=-=-=-=-= */
+
+/* =-=-=-=-=- Transitions -=-=-=-=-= */
+
+.calendar-menu {
+    transition: initial;
+}
+
+.button:hover {
+    background-color: var(--bg-hover);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* =-=-=-=-=- Responsiveness -=-=-=-=-= */
+
+@media screen and (max-width: 1122px) {
+    /* =-=-=-=-=- Header -=-=-=-=-= */
+
+    .container {
+        padding: 20px 40px;
+    }
+
+    .title h1 {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        left: -100vw;
+    }
+
+    /* =-=-=-=-=- Table -=-=-=-=-= */
+
+    .td-cel {
+        padding: 6px 4px;
+        gap: 4px;
+    }
+
+    .people-month {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        top: 24px;
+        gap: 4px;
+    }
+
+    .people-month .people-item {
+        height: 22px;
+        width: 22px;
+    }
+
+    .people-item-month span {
+        line-height: 22px;
+        height: 22px;
+    }
+    
+    .people-item-month:hover span {
+        top: -26px;
+    }
+}
+
+@media screen and (max-width: 891px) {
+    /* =-=-=-=-=- Global -=-=-=-=-= */
+
+    .button {
+        width: 48px;
+        height: 48px;
+    }
+
+    #previous.button,
+    #next.button {
+        width: 48px;
+        background: none;
+    }
+
+    /* =-=-=-=-=- Header -=-=-=-=-= */
+
+    .container {
+        position: relative;
+        padding: 20px 20px;
+        gap: 20px;
+    }
+
+    .obuc-calendar {
+        height: 48px;
+    }
+
+    .obuc-calendar span {
+        width: 48px;
+        height: 40px;
+        line-height: 42px;
+    }
+
+    .calendar-menu {
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 98px;
+        width: 336px;
+        gap: 8px;
+    }
+
+    .calendar-menu .change-mw {
+        gap: 4px;
+        flex: 1;
+    }
+
+    .calendar-menu .change-mw .current-date {
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    header nav::before {
+        display: none;
+    }
+
+    /* =-=-=-=-=- Table -=-=-=-=-= */
+
+    .container.calendar {
+        width: 336px;
+        margin: 44px auto 0;
+        flex: initial;
+        gap: 12px;
+    }
+
+    .td-cel {
+        height: 48px;
+        justify-content: center;
+    }
+
+    .selected-day-container {
+        display: initial;
+        background-color: rgba(242, 242, 248, 0.4);
+        border-radius: 8px;
+        padding: 24px 16px;
+        width: 100%;
+    }
+
+    .selected-day-container .people-item {
+        font-size: 12px;
+        line-height: 12px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding-bottom: 12px;
+    }
+    
+    .selected-day-container .people-item:first-of-type {
+        padding-top: 24px;
+    }
+
+    .selected-day-container .people-item+.people-item {
+        border-top: 1px solid rgba(61, 60, 62, 0.2);
+        padding-top: 12px;
+    }
+
+    .selected-day-container .people-item img {
+        height: 24px;
+        width: 24px;
+        border-radius: 12px;
+    }
+
+    .cel-selected-day {
+        border: 1px solid var(--primary-green);
+    }
+}
