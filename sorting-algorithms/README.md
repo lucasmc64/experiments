@@ -12,8 +12,8 @@ The first step is to clone the project, either via terminal or GitHub Desktop, o
 
 ### :hammer_and_wrench: Requirements
 
-- [Node.JS](https://nodejs.org/) installed.
-- [VSCode](https://code.visualstudio.com/) and the extension [Node.js Exec](https://marketplace.visualstudio.com/items?itemName=miramac.vscode-exec-node) installed.
+- [Node.JS](https://nodejs.org/).
+- [VSCode](https://code.visualstudio.com/) and the extension [Node.js Exec](https://marketplace.visualstudio.com/items?itemName=miramac.vscode-exec-node).
 
 ### :sparkles: Running the JS files
 
