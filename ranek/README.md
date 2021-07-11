@@ -14,7 +14,7 @@ Share your adventures and your little dog with people who have the same passion 
 
 ## :scroll: Some details 
 
-- The fontend is built with ReactJS.
+- The font-end is built with ReactJS.
 
 ## :thinking: How do I run the project on my machine? 
 

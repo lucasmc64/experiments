@@ -4,7 +4,7 @@
 
 ## :scroll: Some details
 
-- The back end is made with Java.
+- This project is made with Java.
 
 ## :thinking: How to run the project on my machine?
 

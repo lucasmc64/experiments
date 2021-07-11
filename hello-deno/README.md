@@ -4,7 +4,7 @@
 
 ## :scroll: Some details
 
-- The back end is made with Deno.
+- The back-end is made with Deno.
 
 ## thinking: How to run the project on my machine?
 

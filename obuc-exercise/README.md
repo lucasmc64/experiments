@@ -10,7 +10,7 @@ With the advent of the pandemic and the migration of much of the "non-essential"
 
 ## :scroll: Some details
 
-- The front end is made with HTML5, CSS3 and JavaScript.
+- The front-end is made with HTML5, CSS3 and JavaScript.
 
 ## :thinking: How to run the project on my machine? 
 

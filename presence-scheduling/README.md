@@ -8,7 +8,7 @@ In order to avoid agglomerations in the pandemic, this project aims to allow you
 
 ## :scroll: Some details
 
-- The front end is made with HTML5, CSS3 and JavaScript.
+- The front-end is made with HTML5, CSS3 and JavaScript.
 
 ## :thinking: How do I run the project on my machine?
 

@@ -6,7 +6,7 @@
 
 ## :scroll: Some details
 
-- The front end is made with HTML5, CSS3 and JavaScript.
+- The front-end is made with HTML5, CSS3 and JavaScript.
 
 ## :thinking: How to run the project on my machine? 
 
