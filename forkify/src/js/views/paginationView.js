@@ -4,8 +4,6 @@ import icons from 'url:../../img/icons.svg';
 
 class PaginationView extends View {
   _parentElement = document.querySelector('.pagination');
-  _errorMessage = 'No recipes found for your query. Please try again!';
-  _message = '';
 
   addHandlerClick(handler) {
     this._parentElement.addEventListener('click', function (event) {
