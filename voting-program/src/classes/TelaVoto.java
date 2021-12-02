@@ -102,7 +102,7 @@ public class TelaVoto extends javax.swing.JFrame {
         btnVoto.setFont(new java.awt.Font("Caviar Dreams", 1, 12)); // NOI18N
         btnVoto.setText("VOTAR");
         btnVoto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            public void erformed(java.awt.event.ActionEvent evt) {
                 btnVotoActionPerformed(evt);
             }
         });
