@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(26, 29, 41);
+  display: flex;
+  align-items: center;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(rgba(255, 255, 255, 0.25), transparent);
+}
+
+.wrapper {
+  padding: 0 calc(3.5vw + 24px);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  height: 8rem;
+  width: 100%;
+  position: relative;
+}
+
+#previousButton,
+#nextButton {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  height: 100%;
+  width: calc(24px + 3.5vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+}
+
+#previousButton {
+  left: 0;
+  background: linear-gradient(to right, rgba(26, 29, 41, 0.75), transparent);
+}
+
+#nextButton {
+  right: 0;
+  background: linear-gradient(to left, rgba(26, 29, 41, 0.75), transparent);
+}
+
+.block {
+  border-radius: 1rem;
+  height: 100%;
+  width: 100%;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.b1 {
+  background: orange;
+}
+
+.b2 {
+  background: teal;
+}
+
+.b3 {
+  background: violet;
+}
+
+.b4 {
+  background: tomato;
+}
+
+.b5 {
+  background: slateblue;
+}
+
+.realocationDelayPrevious,
+.realocationDelayNext,
+#previousBlock,
+#currentBlock,
+#nextBlock {
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  opacity: 1;
+}
+
+.realocationDelayPrevious {
+  left: -100% !important;
+  animation-name: fadeToRight;
+}
+
+.realocationDelayNext {
+  left: 200% !important;
+  animation-name: fadeToLeft;
+}
+
+#previousBlock {
+  left: -100%;
+}
+
+#currentBlock {
+  left: 0%;
+  transform: scale(1);
+}
+
+#nextBlock {
+  left: 100%;
+}
+
+#previousBlock.previousAction {
+  left: -100%;
+  animation-name: fadeToLeft;
+}
+
+#previousBlock.nextAction {
+  left: 0%;
+  animation-name: previousBlockAnimation2;
+}
+
+#currentBlock.previousAction {
+  left: 0%;
+  animation-name: currentBlockAnimation1;
+}
+
+#currentBlock.nextAction {
+  left: 100%;
+  animation-name: currentBlockAnimation2;
+}
+
+#nextBlock.previousAction {
+  left: 100%;
+  animation-name: nextBlockAnimation1;
+}
+
+#nextBlock.nextAction {
+  left: 200%;
+  animation-name: fadeToRight;
+}
+
+@keyframes previousBlockAnimation1 {
+  from {
+    transform: translate(-100%, 0) scale(1);
+  }
+
+  to {
+    transform: translate(0, 0) scale(0.95);
+  }
+}
+
+@keyframes previousBlockAnimation2 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(-100%, 0) scale(0.95);
+  }
+}
+
+@keyframes currentBlockAnimation1 {
+  from {
+    transform: translate(-100%, 0) scale(0.95);
+  }
+
+  to {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes currentBlockAnimation2 {
+  from {
+    transform: translate(0, 0) scale(0.95);
+  }
+
+  to {
+    transform: translate(-100%, 0) scale(1);
+  }
+}
+
+@keyframes nextBlockAnimation1 {
+  from {
+    transform: translate(-100%, 0) scale(1);
+  }
+
+  to {
+    transform: translate(0, 0) scale(0.95);
+  }
+}
+
+@keyframes nextBlockAnimation2 {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(-100%, 0) scale(0.95);
+  }
+}
+
+@keyframes fadeToRight {
+  from {
+    transform: translate(0, 0) scale(0.95);
+  }
+
+  to {
+    transform: translate(-100%, 0) scale(0.95);
+  }
+}
+
+@keyframes fadeToLeft {
+  from {
+    transform: translate(-100%, 0) scale(0.95);
+  }
+
+  to {
+    transform: translate(0, 0) scale(0.95);
+  }
+}
