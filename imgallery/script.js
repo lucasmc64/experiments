@@ -90,21 +90,6 @@ function handleGoToPreviousImage() {
   currentImage.src = `img/${btnPreviousImage.dataset.index}.jpg`;
   btnPreviousImage.classList.add("selected");
 
-  console.log("btnPreviousImage.offsetLeft", btnPreviousImage.offsetLeft);
-  console.log("btnPreviousImage.clientWidth", btnPreviousImage.clientWidth);
-  console.log("btnPreviousImage.scrollWidth", btnPreviousImage.scrollWidth);
-  console.log(
-    "btnPreviousImage.offsetLeft + btnPreviousImage.clientWidth",
-    btnPreviousImage.offsetLeft + btnPreviousImage.clientWidth,
-  );
-  console.log("gallery.scrollLeft", gallery.scrollLeft);
-  console.log("gallery.clientWidth", gallery.clientWidth);
-  console.log("gallery.scrollWidth", gallery.scrollWidth);
-  console.log(
-    "gallery.scrollLeft + gallery.clientWidth",
-    gallery.scrollLeft + gallery.clientWidth,
-  );
-
   if (btnPreviousImage.offsetLeft - 4 < gallery.scrollLeft) {
     gallery.scrollTo({
       top: 0,
