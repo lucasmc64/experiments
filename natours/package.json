@@ -4,7 +4,10 @@
   "description": "Landing page for natours",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+    "prestart": "npm run compile:sass",
+    "start": "npm run live-compile:sass & live-server",
+    "compile:sass": "node-sass sass/main.scss css/style.css",
+    "live-compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "lucasmc64",
   "license": "ISC",
