@@ -31,3 +31,58 @@
   position: relative;
   padding: 15rem 0;
 }
+
+.section-book {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+.book {
+  // Serrilhado terrível
+  // background-image: linear-gradient(
+  //     105deg,
+  //     rgba($color-white, 0.9) 0%,
+  //     rgba($color-white, 0.9) calc(50% - 1px),
+  //     transparent calc(50% + 1px)
+  //   ),
+  //   url(../../img/nat-10.jpg);
+  // background-size: 100%; // or cover
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+  position: relative;
+
+  // Background alternativo
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &::before {
+    background-color: rgba($color-white, 0.9);
+    -webkit-clip-path: polygon(0 0, 56% 0, 44% 100%, 0 100%);
+    clip-path: polygon(0 0, 56% 0, 44% 100%, 0 100%);
+    z-index: 1;
+  }
+
+  &::after {
+    background-image: url(../../img/nat-10.jpg);
+    background-size: 100%;
+    z-index: 0;
+  }
+
+  &__form {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    padding: 6rem;
+  }
+}
