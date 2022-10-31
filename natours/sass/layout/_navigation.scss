@@ -15,6 +15,11 @@
     box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__background {
@@ -30,19 +35,24 @@
     );
     z-index: 1000;
     transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+
+    @include respond(tab-port) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__nav {
     height: 100vh;
-    width: 0;
+    // width: 0;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1500;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6),
-      width 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6), visibility 0s 0.8s;
+    transition: opacity 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6); //, width 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6), visibility 0s 0.8s;
   }
 
   &__list {
@@ -99,10 +109,9 @@
 
   &__checkbox:checked ~ &__nav {
     opacity: 1;
-    width: 100%;
+    // width: 100%;
     visibility: visible;
-    transition: opacity 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6),
-      width 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    transition: opacity 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6); //, width 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   }
 
   // ICON
